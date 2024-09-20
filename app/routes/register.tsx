@@ -41,7 +41,6 @@ export const action = async ({ request }: ActionArgs) => {
     }
 
     const newUser = await Promise.all([postUser(user)]);
-    console.log(newUser);
 
   }
   return null;

@@ -45,31 +45,141 @@
 }
 
 .mensaje-sesion {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px; /* Bordes redondeados para el contenedor */
-    background-color: #f9f9f9; /* Color de fondo */
-    text-align: center; /* Centra el texto */
-  }
-  
-  .mensaje-sesion p {
-    font-size: 1.6rem; /* Tamaño de la fuente del mensaje */
-    margin: 0; /* Elimina el margen por defecto */
-  }
-  
-  .mensaje-sesion button {
-    margin-top: 10px; /* Espacio arriba del botón */
-    padding: 10px 20px; /* Espacio dentro del botón */
-    background-color: var(--black); /* Color de fondo del botón */
-    color: var(--white); /* Color del texto del botón */
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    font-weight: 700; /* Peso de la fuente */
-    transition: background-color 0.3s; /* Transición para el efecto hover */
-  }
-  
-  .mensaje-sesion button:hover {
-    background-color: var(--primary); /* Color de fondo al pasar el mouse */
-  }
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Bordes redondeados para el contenedor */
+  background-color: #f9f9f9; /* Color de fondo */
+  text-align: center; /* Centra el texto */
+}
+
+.mensaje-sesion p {
+  font-size: 1.6rem; /* Tamaño de la fuente del mensaje */
+  margin: 0; /* Elimina el margen por defecto */
+}
+
+.mensaje-sesion button {
+  margin-top: 10px; /* Espacio arriba del botón */
+  padding: 10px 20px; /* Espacio dentro del botón */
+  background-color: var(--black); /* Color de fondo del botón */
+  color: var(--white); /* Color del texto del botón */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  font-weight: 700; /* Peso de la fuente */
+  transition: background-color 0.3s; /* Transición para el efecto hover */
+}
+
+.mensaje-sesion button:hover {
+  background-color: var(--primary); /* Color de fondo al pasar el mouse */
+}
+
+.listado-publicaciones {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.publicacion {
+  margin-bottom: 15px; /* Espacio entre publicaciones */
+  padding: 15px;
+  border: 1px solid #e0e0e0; /* Borde ligero para cada publicación */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #fff; /* Fondo blanco */
+}
+
+.publicacion-info {
+  display: flex; /* Usar flexbox para alinear elementos */
+  justify-content: space-between; /* Espacio entre autor y fecha */
+  font-size: 1.5rem;
+  color: #555; /* Color gris para el texto */
+  margin-bottom: 10px; /* Espacio entre la info y el contenido */
+}
+
+.publicacion h3 {
+  margin: 0; /* Elimina el margen por defecto */
+  font-size: 3rem; /* Tamaño de la fuente del título más grande */
+}
+
+.publicacion p {
+  margin: 10px 0; /* Espacio entre el contenido y la fecha */
+  font-size: 1.5rem; /* Tamaño de la fuente del contenido más grande */
+}
+
+.comentarios-boton {
+  margin-top: 10px; /* Espacio arriba del botón */
+  padding: 8px 15px; /* Padding más pequeño para el botón */
+  font-size: 1.5rem; /* Tamaño de fuente más pequeño */
+  background-color: var(--black); /* Color de fondo del botón */
+  color: var(--white); /* Color del texto del botón */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  font-weight: 700; /* Peso de la fuente */
+  transition: background-color 0.3s; /* Transición para el efecto hover */
+}
+
+.comentarios-boton:hover {
+  background-color: var(--primary); /* Color de fondo al pasar el mouse */
+}
+
+.listado-comentarios {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.comentario {
+  margin-bottom: 15px; /* Espacio entre comentarios */
+  padding: 10px;
+  border: 1px solid #e0e0e0; /* Borde ligero para cada comentario */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #fff; /* Fondo blanco */
+}
+
+.comentario-info {
+  display: flex; /* Usar flexbox para alinear elementos */
+  justify-content: space-between; /* Espacio entre autor y fecha */
+  font-size: 1.5rem; /* Tamaño de fuente para esta sección */
+  color: #555; /* Color gris para el texto */
+  margin-bottom: 5px; /* Espacio entre la info y el contenido */
+}
+
+.comentario p {
+  margin: 0; /* Elimina el margen por defecto */
+  font-size: 2rem; /* Tamaño de la fuente del contenido */
+}
+
+.agregar-comentario {
+  display: flex;
+  margin-top: 20px;
+}
+
+.input-comentario {
+  flex: 1; /* Para que el input ocupe el espacio disponible */
+  padding: 10px;
+  font-size: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Bordes redondeados */
+  margin-right: 10px; /* Espacio entre el input y el botón */
+}
+
+.boton-agregar {
+  padding: 10px 15px;
+  font-size: 2rem;
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición para el efecto hover */
+}
+
+.boton-agregar:hover {
+  background-color: var(--primary); /* Color de fondo al pasar el mouse */
+}
+
