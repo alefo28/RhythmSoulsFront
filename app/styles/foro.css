@@ -157,6 +157,8 @@
 .agregar-comentario {
   display: flex;
   margin-top: 20px;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
 }
 
 .input-comentario {
@@ -183,3 +185,13 @@
   background-color: var(--primary); /* Color de fondo al pasar el mouse */
 }
 
+.mensaje-sesion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ffc107; /* Color amarillo */
+  border-radius: 5px;
+  background-color: #fff3cd; /* Fondo amarillo claro */
+  margin-top: 10px;
+}

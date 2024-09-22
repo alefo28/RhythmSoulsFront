@@ -1,7 +1,7 @@
 import Post from "./post";
 
 export default function ListadoPosts({ posts }) {
-  //console.log(posts);
+
   return (
     <>
       <h2 className="heading">Blog</h2>

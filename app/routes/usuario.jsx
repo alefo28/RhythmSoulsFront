@@ -1,6 +1,8 @@
 import { useNavigate, useOutletContext, Link } from "@remix-run/react";
 import React, { useEffect, useState } from "react";
 import img from "../../public/img/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg";
+import ListadoPublicaciones from "../components/foro/ListadoPublicaciones";
+import { getPublicacionesUser } from "../models/publicacions.serve";
 
 export function meta({ data }) {
   return [
@@ -14,6 +16,7 @@ export function meta({ data }) {
 function Usuario() {
   const { user, deleteCarrito } = useOutletContext();
   const [loading, setLoading] = useState(false);
+  const [publicaciones, setPublicaciones] = useState([]);
 
   const { login } = useOutletContext();
   const navigate = useNavigate();
@@ -21,10 +24,11 @@ function Usuario() {
   useEffect(() => {
     setLoading(true);
     if (user.mail == undefined) {
-      console.log("entro");
       navigate("/login");
     }
     setLoading(false);
+
+    findPublicaciones();
   }, []);
 
   const handleClick = (e) => {
@@ -34,6 +38,12 @@ function Usuario() {
     login({});
     navigate("/login");
     setLoading(false);
+  };
+
+  const findPublicaciones = async () => {
+    const publi = await getPublicacionesUser(user.id);
+
+    setPublicaciones(publi.data);
   };
 
   return (
@@ -59,6 +69,15 @@ function Usuario() {
                 Cerrar sesion
               </button>
             </div>
+          </div>
+
+          <h2 className="heading">Tu publicaciones</h2>
+
+          <div className="contenedor">
+            <ListadoPublicaciones
+              publicaciones={publicaciones}
+              profile={true}
+            />
           </div>
         </>
       )}

@@ -1,15 +1,15 @@
 export async function getPosts() {
-    const respuesta = await fetch(
-      `${process.env.API_URL}/posts?populate=imagen`
-    );
-  
-    return await respuesta.json();
-  }
+  const respuesta = await fetch(
+    `${process.env.REACT_APP_API_URL}/posts?populate=imagen`
+  );
 
-  export async function getPost(url) {
-    const respuesta = await fetch(
-      `${process.env.API_URL}/posts?filters[url]=${url}&populate=imagen`
-    );
-    return await respuesta.json();
-  }
-  
+  return await respuesta.json();
+}
+
+export async function getPost(url) {
+  const respuesta = await fetch(
+    `${process.env.REACT_APP_API_URL}/posts?filters[url]=${url}&populate=imagen`
+  );
+  return await respuesta.json();
+}
+

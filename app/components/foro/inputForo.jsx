@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { postPublicaciones } from "../../models/publicacions.serve";
-import { useOutletContext } from "@remix-run/react";
+import { useNavigate, useOutletContext } from "@remix-run/react";
+import { postPublicaciones } from "../../models/publicacions.serve.js";
 
 function PublicacionForo() {
   const { user } = useOutletContext();
@@ -34,13 +34,17 @@ function PublicacionForo() {
       };
       try {
         await Promise.all([postPublicaciones(data)]);
-      } catch (error) {
-        console.log("----", error);
-      }
+        window.alert("Publicacio Exitosa!");
 
-      window.alert("Publicacio Exitosa!");
-      setPostContent("");
-      setPostTitle("");
+        setPostContent("");
+        setPostTitle("");
+
+        window.location.reload()
+      } catch (error) {
+        console.log(error);
+
+        window.alert("Algo salio mal!");
+      }
     }
   };
 

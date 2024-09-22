@@ -6,6 +6,7 @@ import {
 } from "@remix-run/react";
 import PublicacionForo from "../components/foro/inputForo";
 import ListadoPublicaciones from "../components/foro/Listadopublicaciones";
+import { getPublicaciones } from "../models/publicacions.serve";
 
 export function meta() {
   return [
@@ -18,37 +19,14 @@ export function meta() {
   ];
 }
 export async function loader() {
-  return [
-    {
-      titulo: "Aprendiendo React",
-      contenido:
-        "Hoy empecé a aprender React y me parece fascinante. ¡No puedo esperar a construir mi primera aplicación!",
-      autor: "Juan Pérez",
-      fecha: "2024-09-19",
-      url: "2",
-    },
-    {
-      titulo: "Consejos para Guitarristas",
-      contenido:
-        "Siempre calienta tus dedos antes de tocar y practica regularmente. La constancia es clave.",
-      autor: "María López",
-      fecha: "2024-09-18",
-      url: "3",
-    },
-    {
-      titulo: "Mis Instrumentos Favoritos",
-      contenido:
-        "Me encantan la guitarra y el piano. Ambos tienen un sonido único que me inspira.",
-      autor: "Carlos González",
-      fecha: "2024-09-17",
-      url: "4",
-    },
-  ];
+  const publicaciones = getPublicaciones();
+  return publicaciones;
 }
 
 function Foro() {
   const { user } = useOutletContext();
   const publicaciones = useLoaderData();
+
   return (
     <>
       <h2 className="heading">Foro</h2>
@@ -57,7 +35,7 @@ function Foro() {
           <div className="mensaje-sesion">
             <p>Debes iniciar sesión para poder publicar en el foro.</p>
             <Link to="/login">
-              <button>Iniciar Sesión</button>
+              <button className="boton-iniciar-sesion">Iniciar Sesión</button>
             </Link>
           </div>
         </>
@@ -69,7 +47,10 @@ function Foro() {
       )}
       {/* <h3 className="heading">Publicaciones</h3> */}
 
-      <ListadoPublicaciones publicaciones={publicaciones} />
+      <ListadoPublicaciones
+        publicaciones={publicaciones.data}
+        profile={false}
+      />
     </>
   );
 }

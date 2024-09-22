@@ -44,13 +44,14 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (![email, password].includes("")) {
+      let user;
       for (let index = 0; index < users.length; index++) {
 
         if (
           email == users[index].attributes.mail &&
           password == users[index].attributes.password
         ) {
-          const user = {
+          user = {
             id: users[index].id,
             mail: users[index].attributes.mail,
             name: users[index].attributes.name,
@@ -59,13 +60,12 @@ const Login = () => {
           login(user);
           navigate("/usuario");
           break;
-        } else {
-          window.alert("Algunos de los datos estan mal");
-          break;
         }
-
       }
 
+      if (user.id===undefined) {
+        window.alert("Algunos de los datos estan errones");
+      }
     } else {
       window.alert("Los campos no deben estar vacios");
     }
