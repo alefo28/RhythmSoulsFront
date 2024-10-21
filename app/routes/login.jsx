@@ -56,6 +56,7 @@ const Login = () => {
             mail: users[index].attributes.mail,
             name: users[index].attributes.name,
             password: users[index].attributes.password,
+            premium: users[index].attributes.premium
           };
           login(user);
           navigate("/usuario");

@@ -39,6 +39,22 @@ function Navegacion() {
         {" "}
         Foro
       </Link>
+
+      <Link
+        to="/songs"
+        className={location.pathname === "/songs" ? "active" : ""}
+      >
+        {" "}
+        Canciones
+      </Link>
+      <Link
+        to="/cursos"
+        className={location.pathname === "/cursos" ? "active" : ""}
+      >
+        {" "}
+        Cursos
+      </Link>
+
       <Link to="/carrito">
         {" "}
         <img src={imagen} alt="Carrito de compras " />

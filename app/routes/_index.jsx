@@ -33,6 +33,7 @@ function Index() {
   const limitedPosts = posts.slice(0, 3);
   const limitedGuitarras = guitarras.slice(0, 3);
 
+  
   return (
     <>
       <section className="contenedor">

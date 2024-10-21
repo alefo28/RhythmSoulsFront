@@ -59,13 +59,27 @@ function Usuario() {
             <div>
               <img src={img} alt="Carrito de compras " />
             </div>
-            <div>{user.name}</div>
-            <div>{user.mail}</div>
+            <h2 className="user-name">{user.name}</h2>
+            {/*  <div>{user.mail}</div> */}
+            <div className="buttons">
+              {user.premium ? (
+                <p className="premium-text">
+                  Ya eres Premium, disfruta de los beneficios
+                </p>
+              ) : (
+                <>
+                  <p className="not-premium-text">¿No eres Premium aun?</p>
+                  <button className="premium-button">
+                    Conviértete en Premium
+                  </button>
+                </>
+              )}
+            </div>
             <div className="buttons">
               <Link to={"/edit"} className="centered-button">
                 Editar Cuenta
               </Link>
-              <button onClick={handleClick} className="buttonLogout ">
+              <button onClick={handleClick} className="buttonLogout">
                 Cerrar sesion
               </button>
             </div>

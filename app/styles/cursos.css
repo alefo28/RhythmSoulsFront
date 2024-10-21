@@ -1,0 +1,41 @@
+.mensaje-sesion {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Bordes redondeados para el contenedor */
+    background-color: #f9f9f9; /* Color de fondo */
+    text-align: center; /* Centra el texto */
+  }
+  
+  .mensaje-sesion p {
+    font-size: 1.6rem; /* Tamaño de la fuente del mensaje */
+    margin: 0; /* Elimina el margen por defecto */
+  }
+  
+  .mensaje-sesion button {
+    margin-top: 10px; /* Espacio arriba del botón */
+    padding: 10px 20px; /* Espacio dentro del botón */
+    background-color: var(--black); /* Color de fondo del botón */
+    color: var(--white); /* Color del texto del botón */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-weight: 700; /* Peso de la fuente */
+    transition: background-color 0.3s; /* Transición para el efecto hover */
+  }
+  
+  .mensaje-sesion button:hover {
+    background-color: var(--primary); /* Color de fondo al pasar el mouse */
+  }
+  
+  .mensaje-sesion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ffc107; /* Color amarillo */
+    border-radius: 5px;
+    background-color: #fff3cd; /* Fondo amarillo claro */
+    margin-top: 10px;
+  }
+  
