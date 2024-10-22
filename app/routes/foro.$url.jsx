@@ -1,8 +1,9 @@
 import { Link, useLoaderData, useOutletContext } from "@remix-run/react";
 import { useState } from "react";
-import { getPublicacion, postComments } from "../models/publicacions.serve";
+import { getPublicacion } from "../models/publicacions.serve";
 import Comments from "../components/foro/comments";
 import { formatFecha } from "../utils/helpers";
+import { postCommentsCursos } from "../models/curso.serve";
 
 export function meta({ data }) {
   if (!data) {
@@ -40,8 +41,6 @@ export default function Foro() {
 
   const { user_api, content, date, title, comments } = post.data[0].attributes;
 
-
-
   const [nuevoComentario, setNuevoComentario] = useState("");
 
   const manejarCambio = (e) => {
@@ -61,19 +60,19 @@ export default function Foro() {
       };
 
       try {
-        await postComments(data);
+        await postCommentsCursos(data);
       } catch (error) {
         console.log(error);
       }
 
-      setNuevoComentario(""); 
-      window.location.reload()
+      setNuevoComentario("");
+      window.location.reload();
     }
   };
 
   const comentariosOrdenadas = [...comments.data].sort((a, b) => {
     return new Date(b.attributes.date) - new Date(a.attributes.date);
-  });  
+  });
 
   return (
     <>

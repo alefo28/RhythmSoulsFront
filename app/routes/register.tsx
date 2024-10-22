@@ -8,7 +8,7 @@ import {
   Form,
   useActionData,
 } from "@remix-run/react";
-import { postUser, getusers } from "../models/users.server";
+import { postUser, getusers } from "../models/users.serve";
 import Spinner from "../components/helpers/Spinner";
 
 export function meta({ data }: any) {

@@ -4,6 +4,8 @@ export async function getusers() {
   return await respuesta.json();
 }
 
+
+
 export async function postUser(user) {
   const respuesta = await fetch(`${process.env.REACT_APP_API_URL}/user-apis`, {
     method: "POST",
@@ -31,3 +33,14 @@ export async function putUser(id, user) {
 
   return await respuesta.json();
 }
+
+
+export const getUser = async (email) => {
+
+  const respuesta = await fetch(
+    `${process.env.REACT_APP_API_URL}/user-apis/?filters[mail]=${email}`
+  );
+  return await respuesta.json();
+
+}
+

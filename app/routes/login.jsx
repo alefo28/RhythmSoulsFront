@@ -5,12 +5,10 @@ import {
   useNavigate,
   useOutletContext,
 } from "@remix-run/react";
-import { getusers } from "../models/users.server";
+import { getUser } from "../models/users.serve";
 
 export async function loader() {
-  const [users] = await Promise.all([getusers()]);
-
-  return users.data;
+  return [];
 }
 
 export function meta({ data }) {
@@ -41,31 +39,29 @@ const Login = () => {
     setLoading(false);
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (![email, password].includes("")) {
-      let user;
-      for (let index = 0; index < users.length; index++) {
+      try {
+        const Login = await getUser(email);
+        const userLogin = Login.data[0];
 
-        if (
-          email == users[index].attributes.mail &&
-          password == users[index].attributes.password
-        ) {
-          user = {
-            id: users[index].id,
-            mail: users[index].attributes.mail,
-            name: users[index].attributes.name,
-            password: users[index].attributes.password,
-            premium: users[index].attributes.premium
+        if (Login.data.length === 0 || userLogin.attributes.password !== password) {
+          window.alert("Algunos de los datos estan erroneos");
+        } else {
+          let user = {
+            id: userLogin.id,
+            mail: userLogin.attributes.mail,
+            name: userLogin.attributes.name,
+            password: userLogin.attributes.password,
+            premium: userLogin.attributes.premium,
           };
+
           login(user);
           navigate("/usuario");
-          break;
         }
-      }
-
-      if (user.id===undefined) {
-        window.alert("Algunos de los datos estan errones");
+      } catch (error) {
+        console.log(error);
       }
     } else {
       window.alert("Los campos no deben estar vacios");

@@ -5,7 +5,7 @@ import {
   useOutletContext,
   useActionData,
 } from "@remix-run/react";
-import { putUser } from "../models/users.server";
+import { putUser } from "../models/users.serve";
 import { ActionArgs, ActionFunction } from "@remix-run/node";
 
 export const action = async ({ request }: ActionArgs) => {

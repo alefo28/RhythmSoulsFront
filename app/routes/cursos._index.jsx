@@ -5,6 +5,7 @@ import {
   useOutletContext,
 } from "@remix-run/react";
 import ListadoCursos from "../components/Cursos/ListadoCursos";
+import { getCursosNew } from "../models/curso.serve";
 
 export function meta() {
   return [
@@ -17,12 +18,14 @@ export function meta() {
   ];
 }
 export async function loader() {
-  return [];
+  const Cursos = getCursosNew();
+  return Cursos;
 }
 
 function Cursos() {
   const { user } = useOutletContext();
-  const songs = useLoaderData();
+  const Cursos = useLoaderData();
+  
 
   return (
     <>
@@ -47,7 +50,7 @@ function Cursos() {
       ) : (
         <>
           {" "}
-          <ListadoCursos />
+          <ListadoCursos  cursos={Cursos.data}/>
         </>
       )}
     </>
