@@ -6,8 +6,8 @@ export default function ListadoCursos({ cursos }) {
   return (
     <div>
       <div className="Cursos">
-        {cursos?.map((curso) => (
-          <article className="post">
+        {cursos?.map((curso, index) => (
+          <article key={index} className="post">
             <img
               className="imagen"
               src={curso.attributes.imagen.data.attributes.url}

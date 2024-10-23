@@ -1,8 +1,8 @@
 import { useNavigate, useOutletContext, Link } from "@remix-run/react";
 import React, { useEffect, useState } from "react";
-import img from "../../public/img/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg";
 import ListadoPublicaciones from "../components/foro/ListadoPublicaciones";
 import { getPublicacionesUser } from "../models/publicacions.serve";
+import { PutUsuarioPremium } from "../models/users.serve";
 
 export function meta({ data }) {
   return [
@@ -14,7 +14,7 @@ export function meta({ data }) {
 }
 
 function Usuario() {
-  const { user, deleteCarrito } = useOutletContext();
+  const { user, deleteCarrito, handlePremium } = useOutletContext();
   const [loading, setLoading] = useState(false);
   const [publicaciones, setPublicaciones] = useState([]);
 
@@ -69,7 +69,10 @@ function Usuario() {
                   ) : (
                     <>
                       <p className="not-premium-text">¿No eres Premium aun?</p>
-                      <button className="premium-button">
+                      <button
+                        onClick={handlePremium}
+                        className="premium-button"
+                      >
                         Conviértete en Premium
                       </button>
                     </>

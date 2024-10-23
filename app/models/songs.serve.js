@@ -7,8 +7,3 @@ export async function getSongs() {
     return await respuesta.json();
  
 }
-
-export async function sisis() {
-  console.log("hola");
-
-}

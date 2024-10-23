@@ -75,7 +75,6 @@ function Curso() {
   const comentariosOrdenadas = [...comments.data].sort((a, b) => {
     return new Date(b.attributes.date) - new Date(a.attributes.date);
   });
-  console.log(user);
 
   return (
     <article className="post mt-3">

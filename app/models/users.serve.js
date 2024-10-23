@@ -44,3 +44,31 @@ export const getUser = async (email) => {
 
 }
 
+
+export async function PutUsuarioPremium(userId) {
+  try {
+    // Realizar la petición PUT para actualizar el usuario
+    const respuesta = await fetch(`${process.env.REACT_APP_API_URL}/user-apis/${userId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        data: {
+          premium: true,  // Cambiar premium a true
+        },
+      }),
+    });
+
+    // Verificar si la respuesta fue exitosa
+    if (!respuesta.ok) {
+      throw new Error('Error al actualizar el usuario');
+    }
+
+    // Retornar la respuesta en formato JSON
+    const usuarioActualizado = await respuesta.json();
+    return usuarioActualizado;
+  } catch (error) {
+    console.error('Error al actualizar el estado premium del usuario:', error);
+  }
+}

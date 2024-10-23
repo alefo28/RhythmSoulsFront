@@ -12,6 +12,7 @@ import {
 import styles from "~/styles/index.css";
 import Header from "~/components/header";
 import Footer from "~/components/footer";
+import { PutUsuarioPremium } from "./models/users.serve";
 
 export function meta() {
   return [
@@ -115,9 +116,21 @@ export default function App() {
     setUser(user);
   };
 
-  const deleteCarrito = ()=> {
+  const deleteCarrito = () => {
     setCarrito([]);
-  }
+  };
+
+  const handlePremium = async (e) => {
+    e.preventDefault();
+
+    await PutUsuarioPremium(user.id);
+    setUser((prevUser) => ({
+      ...prevUser, // Copia el objeto anterior
+      premium: true, // Cambia el atributo premium a true
+    }));
+
+    window.location.reload();
+  };
 
   return (
     <Document>
@@ -130,7 +143,8 @@ export default function App() {
           eliminarGuitarra,
           user,
           login,
-          deleteCarrito
+          deleteCarrito,
+          handlePremium,
         }}
       />
     </Document>

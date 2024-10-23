@@ -58,7 +58,8 @@ function Guitarra() {
     };
 
     agregarCarrito(guitarraSeleccionada);
-    window.location.href = `/carrito`;
+    alert("Producto agregado en el carrito");
+    window.location.href = `/guitarras`;
   };
 
   return (

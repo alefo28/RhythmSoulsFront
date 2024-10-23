@@ -75,7 +75,6 @@ export async function deletePublicacion(id) {
         }
 
         const data = await respuesta.json();
-        console.log('Publicación eliminada:', data);
 
 
     } catch (error) {

@@ -1,0 +1,104 @@
+.mensaje-sesion {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Bordes redondeados para el contenedor */
+  background-color: #f9f9f9; /* Color de fondo */
+  text-align: center; /* Centra el texto */
+}
+
+.mensaje-sesion p {
+  font-size: 1.6rem; /* Tamaño de la fuente del mensaje */
+  margin: 0; /* Elimina el margen por defecto */
+}
+
+.mensaje-sesion button {
+  margin-top: 10px; /* Espacio arriba del botón */
+  padding: 10px 20px; /* Espacio dentro del botón */
+  background-color: var(--black); /* Color de fondo del botón */
+  color: var(--white); /* Color del texto del botón */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  font-weight: 700; /* Peso de la fuente */
+  transition: background-color 0.3s; /* Transición para el efecto hover */
+}
+
+.mensaje-sesion button:hover {
+  background-color: var(--primary); /* Color de fondo al pasar el mouse */
+}
+
+.mensaje-sesion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ffc107; /* Color amarillo */
+  border-radius: 5px;
+  background-color: #fff3cd; /* Fondo amarillo claro */
+  margin-top: 10px;
+}
+.listado-compras {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px; /* Establece un ancho máximo */
+  margin: 0 auto; /* Centra horizontalmente */
+  padding: 1rem;
+}
+
+.compras-info {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+  position: relative;
+  font-size: 2rem; /* Texto más grande */
+}
+
+.compra-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.fecha {
+  font-size: 1.6rem; /* Texto más grande para la fecha */
+  color: #666;
+}
+
+.eliminar-boton {
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  padding: 1rem 2rem; /* Botón un poco más grande */
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1.4rem; /* Texto más grande en el botón */
+}
+
+.eliminar-boton:hover {
+  background-color: #e63946;
+}
+
+.total,
+.status {
+  font-size: 1.7rem; /* Texto más grande para total y status */
+  margin-bottom: 1rem;
+}
+
+.productos h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem; /* Título más grande para 'Productos Comprados' */
+}
+
+.productos ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.productos li {
+  font-size: 1.5rem; /* Texto más grande para la lista de productos */
+  margin: 0.2rem 0;
+}
