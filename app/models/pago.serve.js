@@ -1,7 +1,7 @@
 
 export async function postNuevaCompra(data) {
 
-    const respuesta = await fetch(`${process.env.REACT_APP_API_URL}/compras`, {
+    const respuesta = await fetch(`https://rhythmsoulsback.onrender.com/api/compras`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -17,7 +17,7 @@ export async function postNuevaCompra(data) {
 
 export async function postCompraProduct(data) {
 
-    const respuesta = await fetch(`${process.env.REACT_APP_API_URL}/compra-productos`, {
+    const respuesta = await fetch(`https://rhythmsoulsback.onrender.com/api/compra-productos`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -32,7 +32,7 @@ export async function postCompraProduct(data) {
 
 export async function getCompras(id) {
     const respuesta = await fetch(
-        `${process.env.REACT_APP_API_URL}/compras?filters[user_api]=${id}&populate=compra_productos.guitarra`
+        `https://rhythmsoulsback.onrender.com/api/compras?filters[user_api]=${id}&populate=compra_productos.guitarra`
     );
     return await respuesta.json();
 
@@ -41,7 +41,7 @@ export async function getCompras(id) {
 export async function deleteCompra(id) {
     try {
       // Eliminar la compra principal
-      const respuesta = await fetch(`${process.env.REACT_APP_API_URL}/compras/${id}`, {
+      const respuesta = await fetch(`https://rhythmsoulsback.onrender.com/api/compras/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ export async function deleteCompra(id) {
   
       // Ahora eliminar los productos asociados
       const productosRespuesta = await fetch(
-        `${process.env.REACT_APP_API_URL}/compra-productos?filters[compra]=${id}`,
+        `https://rhythmsoulsback.onrender.com/api/compra-productos?filters[compra]=${id}`,
         {
           method: 'DELETE',
           headers: {

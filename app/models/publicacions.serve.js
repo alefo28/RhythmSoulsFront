@@ -1,6 +1,6 @@
 export async function getPublicaciones() {
     const respuesta = await fetch(
-        `${process.env.REACT_APP_API_URL}/publicacions`
+        `https://rhythmsoulsback.onrender.com/api/publicacions`
     );
 
     return await respuesta.json();
@@ -8,7 +8,7 @@ export async function getPublicaciones() {
 
 export async function postPublicaciones(publicacion) {
 
-    const respuesta = await fetch(`${process.env.REACT_APP_API_URL}/publicacions`, {
+    const respuesta = await fetch(`https://rhythmsoulsback.onrender.com/api/publicacions`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export async function postPublicaciones(publicacion) {
 
 export async function getPublicacion(url) {
     const respuesta = await fetch(
-        `${process.env.REACT_APP_API_URL}/publicacions?filters[url]=${url}&populate=user_api&populate=comments`
+        `https://rhythmsoulsback.onrender.com/api/publicacions?filters[url]=${url}&populate=user_api&populate=comments`
     );
     return await respuesta.json();
 
@@ -31,7 +31,7 @@ export async function getPublicacion(url) {
 
 export async function postComments(data) {
 
-    const respuesta = await fetch(`${process.env.REACT_APP_API_URL}/comments`, {
+    const respuesta = await fetch(`https://rhythmsoulsback.onrender.com/api/comments`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -46,7 +46,7 @@ export async function postComments(data) {
 
 export async function getComments() {
     const respuesta = await fetch(
-        `${process.env.REACT_APP_API_URL}/comments`
+        `https://rhythmsoulsback.onrender.com/api/comments`
     );
     return await respuesta.json();
 
@@ -55,7 +55,7 @@ export async function getComments() {
 export async function getPublicacionesUser(id) {
 
     const respuesta = await fetch(
-        `${process.env.REACT_APP_API_URL}/publicacions?filters[user_api]=${id}`
+        `https://rhythmsoulsback.onrender.com/api/publicacions?filters[user_api]=${id}`
     );
     return await respuesta.json();
 
@@ -63,7 +63,7 @@ export async function getPublicacionesUser(id) {
 
 export async function deletePublicacion(id) {
     try {
-        const respuesta = await fetch(`${process.env.REACT_APP_API_URL}/publicacions/${id}`, {
+        const respuesta = await fetch(`https://rhythmsoulsback.onrender.com/api/publicacions/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

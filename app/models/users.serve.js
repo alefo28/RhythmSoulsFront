@@ -1,5 +1,5 @@
 export async function getusers() {
-  const respuesta = await fetch(`${process.env.REACT_APP_API_URL}/user-apis`);
+  const respuesta = await fetch(`https://rhythmsoulsback.onrender.com/api/user-apis`);
 
   return await respuesta.json();
 }
@@ -7,7 +7,7 @@ export async function getusers() {
 
 
 export async function postUser(user) {
-  const respuesta = await fetch(`${process.env.REACT_APP_API_URL}/user-apis`, {
+  const respuesta = await fetch(`https://rhythmsoulsback.onrender.com/api/user-apis`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -21,7 +21,7 @@ export async function postUser(user) {
 }
 
 export async function putUser(id, user) {
-  const respuesta = await fetch(`${process.env.REACT_APP_API_URL}/user-apis/${id}`, {
+  const respuesta = await fetch(`https://rhythmsoulsback.onrender.com/api/user-apis/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -38,7 +38,7 @@ export async function putUser(id, user) {
 export const getUser = async (email) => {
 
   const respuesta = await fetch(
-    `${process.env.REACT_APP_API_URL}/user-apis/?filters[mail]=${email}`
+    `https://rhythmsoulsback.onrender.com/api/user-apis/?filters[mail]=${email}`
   );
   return await respuesta.json();
 
@@ -48,7 +48,7 @@ export const getUser = async (email) => {
 export async function PutUsuarioPremium(userId) {
   try {
     // Realizar la petición PUT para actualizar el usuario
-    const respuesta = await fetch(`${process.env.REACT_APP_API_URL}/user-apis/${userId}`, {
+    const respuesta = await fetch(`https://rhythmsoulsback.onrender.com/api/user-apis/${userId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
