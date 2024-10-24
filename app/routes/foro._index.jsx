@@ -5,7 +5,7 @@ import {
   useOutletContext,
 } from "@remix-run/react";
 import PublicacionForo from "../components/foro/inputForo";
-import ListadoPublicaciones from "../components/foro/Listadopublicaciones";
+import ListadoPublicaciones from "../components/foro/ListadoPublicaciones";
 import { getPublicaciones } from "../models/publicacions.serve";
 
 export function meta() {
