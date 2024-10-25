@@ -17,7 +17,7 @@ import { PutUsuarioPremium } from "./models/users.serve";
 export function meta() {
   return [
     { charset: "utf-8" },
-    { title: "Rhythm souls - Remix" },
+    { title: "Rhythm souls" },
     { name: "viewport", content: "width=device-width,initial-scale=1" },
   ];
 }

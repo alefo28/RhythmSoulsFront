@@ -28,24 +28,19 @@ function Nosotros() {
 
         <div>
           <p>
-            Donec tincidunt neque at mi fringilla pharetra. Sed dapibus nisl sed
-            luctus porttitor. Duis feugiat placerat dui eu rhoncus. Phasellus
-            dignissim sem sapien, eget condimentum ex commodo id. Quisque nisi
-            velit, fermentum vitae dolor nec, varius feugiat metus. Quisque
-            rhoncus urna lorem, a tincidunt lorem eleifend in. Nam lobortis
-            felis ac neque vulputate pellentesque. Aliquam a enim iaculis,
-            venenatis risus nec, porta augue. Nam quis elit eget odio feugiat
-            mattis tristique ac risus.
+            En Rhythm Souls, vivimos y respiramos música. Nuestra tienda fue
+            fundada para todos aquellos que sienten la conexión profunda con
+            cada nota y cada melodía, buscando brindar no solo instrumentos de
+            calidad, sino también un espacio donde los músicos de todas las
+            trayectorias encuentren inspiración y apoyo en su camino.
           </p>
           <p>
-            Donec tincidunt neque at mi fringilla pharetra. Sed dapibus nisl sed
-            luctus porttitor. Duis feugiat placerat dui eu rhoncus. Phasellus
-            dignissim sem sapien, eget condimentum ex commodo id. Quisque nisi
-            velit, fermentum vitae dolor nec, varius feugiat metus. Quisque
-            rhoncus urna lorem, a tincidunt lorem eleifend in. Nam lobortis
-            felis ac neque vulputate pellentesque. Aliquam a enim iaculis,
-            venenatis risus nec, porta augue. Nam quis elit eget odio feugiat
-            mattis tristique ac risus.
+            Nos dedicamos a ofrecer una experiencia completa, desde productos
+            cuidadosamente seleccionados hasta una comunidad apasionada por la
+            música. En Rhythm Souls, creemos que cada instrumento cuenta una
+            historia, y queremos ayudarte a encontrar el que hable por ti.
+            ¡Únete a nuestra comunidad y déjate llevar por el ritmo que marca tu
+            alma!
           </p>
         </div>
       </div>
