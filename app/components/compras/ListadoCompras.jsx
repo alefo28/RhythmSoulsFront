@@ -7,7 +7,6 @@ export default function ListadoCompras({ compras }) {
   });
 
   const handleCancel = async (id) => {
-    console.log(id);
     // Lógica para cancelar la compra
     await deleteCompra(id);
     window.location.reload();

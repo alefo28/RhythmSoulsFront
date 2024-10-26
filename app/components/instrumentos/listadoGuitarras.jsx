@@ -25,7 +25,6 @@ export default function ListadoGuitarras({ guitarras, inicio }) {
       return nombre.toLowerCase().includes(busqueda.toLowerCase());
     }
   );
-console.log(guitarras);
 
   return (
     <>
