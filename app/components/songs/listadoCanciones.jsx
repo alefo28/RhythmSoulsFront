@@ -8,7 +8,7 @@ function ListaCanciones({ songs }) {
 
   const seleccionarCancion = (cancion) => {
 
-    if (cancionActual?.attributes.Url !== cancion.attributes.Url) {
+    if (cancionActual?.attributes?.Url !== cancion.attributes?.Url) {
       setCancionActual(cancion);
       setIsPlaying(true);
     } else {
@@ -48,7 +48,7 @@ function ListaCanciones({ songs }) {
             <p>{cancionActual.attributes.Artist}</p>
           </div>
           <audio
-            src={cancionActual.attributes.Url.data.attributes.url}
+            src={cancionActual.attributes?.Url.data.attributes?.url}
             controls
             autoPlay={true}
             onPlay={() => setIsPlaying(true)}
@@ -62,13 +62,13 @@ function ListaCanciones({ songs }) {
           <li key={cancion.id}>
             <button
               className={`boton-cancion ${
-                cancionActual?.attributes.Url === cancion.attributes.Url
+                cancionActual?.attributes?.Url === cancion.attributes?.Url
                   ? "reproduciendo"
                   : ""
               }`}
               onClick={() => seleccionarCancion(cancion)}
             >
-              {cancionActual?.attributes.Url === cancion.attributes.Url &&
+              {cancionActual?.attributes?.Url === cancion.attributes?.Url &&
               isPlaying
                 ? "⏸"
                 : "▶"}

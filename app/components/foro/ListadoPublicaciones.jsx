@@ -29,7 +29,7 @@ export default function ListadoPublicaciones({ publicaciones, profile }) {
             </div>
             <h3>{publicacion.attributes.title}</h3>
             <p>{publicacion.attributes.content}</p>
-            <Link to={`/foro/${publicacion.attributes.url}`}>
+            <Link to={`/foro/${publicacion.attributes?.url}`}>
               <button className="comentarios-boton"> 💬 Comentarios</button>
             </Link>
             {profile && (

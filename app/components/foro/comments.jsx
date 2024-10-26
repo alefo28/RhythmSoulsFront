@@ -3,7 +3,7 @@ import { formatFecha } from "../../utils/helpers";
 
 export default function Comments(coments) {
 
-  const { author, date, content } = coments.comentario.attributes;
+  const { author, date, content } = coments?.comentario?.attributes;
 
   return (
     <div className="comentario">

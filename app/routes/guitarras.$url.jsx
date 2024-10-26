@@ -51,7 +51,7 @@ function Guitarra() {
 
     const guitarraSeleccionada = {
       id: guitarra.data[0].id,
-      imagen: imagen.data.attributes.url,
+      imagen: imagen.data.attributes?.url,
       nombre,
       precio,
       cantidad,
@@ -66,7 +66,7 @@ function Guitarra() {
     <div className=" guitarra">
       <img
         className="imagen"
-        src={imagen.data.attributes.url}
+        src={imagen.data.attributes?.url}
         alt={`Imagen de la guitarra ${nombre}`}
       />
       <div className="contenido">

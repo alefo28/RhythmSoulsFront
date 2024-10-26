@@ -12,7 +12,7 @@ export default function Curso({ curso }) {
                 rgb(0 0 0 /0.65),
                 rgb(0 0 0 / 0.7)
               ),
-              url(${imagen.data.attributes.url });
+              url(${imagen?.data?.attributes?.url });
           }
         `}
       </style>

@@ -10,17 +10,17 @@ export default function ListadoCursos({ cursos }) {
           <article key={index} className="post">
             <img
               className="imagen"
-              src={curso.attributes.imagen.data.attributes.url}
-              alt={`imagen curso ${curso.attributes.Title}`}
+              src={curso?.attributes?.imagen.data?.attributes?.url}
+              alt={`imagen curso ${curso?.attributes?.Title}`}
             />
 
             <div className="contenido">
-              <h3>{curso.attributes.Title}</h3>
+              <h3>{curso?.attributes?.Title}</h3>
               <p className="fecha">
-                {formatearFecha(curso.attributes.publishedAt)}
+                {formatearFecha(curso?.attributes?.publishedAt)}
               </p>
-              <p className="resumen">{curso.attributes.content}</p>
-              <Link className="enlace" to={`/cursos/${curso.attributes.url}`}>
+              <p className="resumen">{curso?.attributes.content}</p>
+              <Link className="enlace" to={`/cursos/${curso?.attributes?.url}`}>
                 Ver Curso
               </Link>
             </div>
